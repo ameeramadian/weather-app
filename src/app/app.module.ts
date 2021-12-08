@@ -9,6 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { WeatherModule } from './weather/weather.module';
+import { WeatherService } from './weather/weather.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { WeatherModule } from './weather/weather.module';
     EffectsModule.forRoot([]),
     WeatherModule,
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
