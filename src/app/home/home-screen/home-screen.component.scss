@@ -1,0 +1,18 @@
+div {
+  height: 98vh;
+  background: cadetblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    color: white;
+  }
+  button {
+    padding: 10px 40px;
+    background: white;
+    border-radius: 41px;
+    border: none;
+    color: darkcyan;
+  }
+}

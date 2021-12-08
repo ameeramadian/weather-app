@@ -1,0 +1,40 @@
+<div class="container_div">
+  <button class="back_button" routerLink="">&#8592;</button>
+  <form [formGroup]="weatherFormGroup" (ngSubmit)="onFormSubmit()">
+    <label for="city">Enter City:</label>
+    <input id="city" type="text" formControlName="city" />
+
+    <button type="submit">Get Weather!</button>
+  </form>
+
+  <div class="weather-container">
+    <div>
+      <p>
+        {{ city }}
+      </p>
+      <p *ngIf="displayCelsius$ | async">
+        {{ (weatherData$ | async)?.temp_c }} &#8451;
+      </p>
+      <p *ngIf="!(displayCelsius$ | async)">
+        {{ (weatherData$ | async)?.temp_f }} &#8457;
+      </p>
+    </div>
+
+    <img
+      *ngIf="(weatherData$ | async)?.icon"
+      src="http://openweathermap.org/img/wn/{{
+        (weatherData$ | async)?.icon
+      }}@2x.png"
+      alt=""
+    />
+  </div>
+
+  <label>
+    <input
+      type="checkbox"
+      (change)="checkChanged()"
+      [checked]="displayCelsius$ | async"
+    />
+    Display in celsius
+  </label>
+</div>

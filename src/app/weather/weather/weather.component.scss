@@ -1,0 +1,38 @@
+.container_div {
+  padding: 80px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  .back_button {
+    width: 28px;
+    padding: 4px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    label,
+    input,
+    button {
+      margin: 10px 20px;
+    }
+    input {
+      padding: 4px;
+    }
+    button {
+      padding: 10px;
+      background: cadetblue;
+      color: white;
+    }
+  }
+  .weather-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: center;
+    div {
+      text-align: center;
+    }
+  }
+}
